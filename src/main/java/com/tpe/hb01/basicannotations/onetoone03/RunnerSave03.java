@@ -1,4 +1,4 @@
-package com.tpe.hb01.basicannotations.onetoone;
+package com.tpe.hb01.basicannotations.onetoone03;
 
 
 import org.hibernate.Session;

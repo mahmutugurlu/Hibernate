@@ -24,6 +24,8 @@ public class RunnerFetch05 {
         System.out.println(student);
         System.out.println(student.getUniversity());
 
+
+
         //id:11 olan üniversitenin tüm öğrencilerini listeleyelim:HQL
 
         String hql="SELECT s FROM Student05 s WHERE s.university.id=:pid";//?1 - :pid hql böyle  2 sekilde parametre kullanabiliriz
@@ -34,6 +36,10 @@ public class RunnerFetch05 {
         Query<Student05> query =session.createQuery(hql, Student05.class).setParameter("pid",11); //setParameter metodu ile parametreye deger verdik
         List<Student05> resultList =query.getResultList();
         resultList.forEach(t-> System.out.println(t));
+
+        //1.level cacheden gelir
+        System.out.println("******************************************");
+        System.out.println(session.get(University.class, 11));
 
         //university.getStudents() seklinde bir field yok--tek yönlü ilişki: ancak SQL veya HQL ulaşılabilir.
 

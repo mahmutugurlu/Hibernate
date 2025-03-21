@@ -1,4 +1,4 @@
-package com.tpe.hb01.basicannotations.embeddable;
+package com.tpe.hb01.basicannotations.embeddable02;
 
 import javax.persistence.*;
 
